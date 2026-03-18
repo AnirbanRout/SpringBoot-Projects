@@ -4,7 +4,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class EmployeeCreateDto {
+public class EmployeeDto {
 
     private String name;
     private String email;

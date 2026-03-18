@@ -4,20 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springproj.EmployeeManagementSystem.dto.AddressDTO;
-import com.springboot.springproj.EmployeeManagementSystem.dto.EmployeeCreateDto;
+import com.springboot.springproj.EmployeeManagementSystem.dto.EmployeeDto;
+import com.springboot.springproj.EmployeeManagementSystem.entity.Employee;
 
 @RestController
 @RequestMapping("/api/employee")
 public class EmployeeController {
 
     @GetMapping("/mock")
-    public EmployeeCreateDto mock() {
+    public EmployeeDto mock() {
 
-        EmployeeCreateDto employeeDTO = new EmployeeCreateDto();
+        EmployeeDto employeeDTO = new EmployeeDto();
         employeeDTO.setName("Raj");
         employeeDTO.setAge(16);
         employeeDTO.setGender("Male");
@@ -36,6 +38,13 @@ public class EmployeeController {
         employeeDTO.setAddresses(addresses);
 
         return employeeDTO;
+
+    }
+
+    @PostMapping("/mock2")
+    public String savEmployee(EmployeeDto employeeDto) {
+
+        return "employee object saved...";
 
     }
 
