@@ -3,6 +3,7 @@ package com.springboot.springproj.EmployeeManagementSystem.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,11 +11,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.springboot.springproj.EmployeeManagementSystem.dto.AddressDTO;
 import com.springboot.springproj.EmployeeManagementSystem.dto.EmployeeDto;
-import com.springboot.springproj.EmployeeManagementSystem.entity.Employee;
+import com.springboot.springproj.EmployeeManagementSystem.services.EmployeeService;
 
 @RestController
 @RequestMapping("/api/employee")
 public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
 
     @GetMapping("/mock")
     public EmployeeDto mock() {
@@ -44,7 +48,8 @@ public class EmployeeController {
     @PostMapping("/mock2")
     public String savEmployee(EmployeeDto employeeDto) {
 
-        return "employee object saved...";
+        String message = employeeService.saveEmployee(employeeDto);
+        return message;
 
     }
 
