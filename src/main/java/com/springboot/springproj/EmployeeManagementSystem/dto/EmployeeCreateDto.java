@@ -4,14 +4,13 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class EmployeeDTO {
+public class EmployeeCreateDto {
 
     private String name;
     private String email;
     private int age;
     private double salary;
     private String gender;
-
     private List<AddressDTO> addresses;
 
 }
