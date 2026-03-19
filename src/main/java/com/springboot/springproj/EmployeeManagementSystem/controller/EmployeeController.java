@@ -45,7 +45,7 @@ public class EmployeeController {
 
     }
 
-    @PostMapping("/mock2")
+    @PostMapping("/save-emp")
     public String savEmployee(EmployeeDto employeeDto) {
 
         String message = employeeService.saveEmployee(employeeDto);

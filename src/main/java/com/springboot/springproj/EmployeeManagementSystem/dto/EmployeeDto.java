@@ -1,5 +1,6 @@
 package com.springboot.springproj.EmployeeManagementSystem.dto;
 
+import java.util.ArrayList;
 import java.util.List;
 import lombok.Data;
 
@@ -11,6 +12,6 @@ public class EmployeeDto {
     private int age;
     private double salary;
     private String gender;
-    private List<AddressDTO> addresses;
+    private List<AddressDTO> addresses = new ArrayList<>();
 
 }
